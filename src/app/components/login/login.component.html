@@ -1,0 +1,25 @@
+<div class="body">
+  <div class="login">
+    <mat-spinner *ngIf="loading" class="spinner" diameter="70"></mat-spinner>
+    <form [formGroup]="formLogin" (ngSubmit)="iniciarSesion()" >
+      <mat-card *ngIf="!loading">
+                <img src="./assets/images/user.png" width="200px">
+                <mat-card> Login	</mat-card>
+                <br>
+                <mat-form-field class="anchoForm" appearance="fill">
+                  <mat-label>Usuario</mat-label>
+                  <input matInput autocomplete="off" formControlName="usuario">
+                </mat-form-field>
+
+                <mat-form-field class="anchoForm" appearance="fill">
+                  <mat-label>Contraseña</mat-label>
+                  <input type="password" matInput autocomplete="off" formControlName="password">
+                </mat-form-field>
+
+                <div class="button-row">
+                  <button type="submit" class="anchoForm" mat-raised-button color="primary" [disabled]="formLogin.invalid">Iniciar Sesión</button>
+                </div>
+      </mat-card>
+    </form>
+  </div>
+</div>

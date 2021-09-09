@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <img src="./assets/images/logotipo.png" height="60px">
+
+  <button (click)="callBar()" mat-icon-button class="icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <span class="navbar-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu"> <img class="imgUser" src="./assets/images/avatar.jpg" alt=""> Usuario</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="icon">Perfil <mat-icon>face</mat-icon> </button>
+        <button mat-menu-item class="icon" routerLink="/dashboard">Inicio <mat-icon>home</mat-icon>  </button>
+      </mat-menu>
+    <button mat-icon-button class="icon" routerLink="/login"><mat-icon>logout</mat-icon></button>
+</mat-toolbar>
+
