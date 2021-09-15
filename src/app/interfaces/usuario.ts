@@ -1,4 +1,8 @@
 export interface usuario{
-  usuario: string;
-  password: string;
+  id?: number
+  usuario: string,
+  password?: string,
+  nombrecompleto?: string,
+  direccion?: string,
+  imagenperfil?: string
 }

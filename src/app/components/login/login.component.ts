@@ -1,3 +1,4 @@
+import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -15,30 +16,36 @@ export class LoginComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private snackBar: MatSnackBar,
-              private router: Router) {
+              private router: Router,
+              private loginService: LoginService
+              )
+  {
     this.formLogin = this.fb.group({
       usuario: ['', Validators.required],
       password: ['', Validators.required]
-    });
+      });
    }
 
   ngOnInit(): void {
   }
 
   iniciarSesion(){
+    this.loading = true;
     const usuario: usuario = {
       usuario: this.formLogin.value.usuario,
       password: this.formLogin.value.password
     }
+    this.loginService.login(usuario).subscribe(data => {
+      this.loginService.setLocaStorage(data.token);
+      console.log(data.toke);
 
-    if(usuario.usuario == "admin" && usuario.password == "admin"){
       this.fakeLoading();
-    }
-    else
-    {
+    }, error => {
+      this.loading = false;
       this.error();
       this.formLogin.reset();
-    }
+    });
+
   }
 
   error(){

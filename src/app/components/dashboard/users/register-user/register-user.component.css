@@ -1,0 +1,24 @@
+.card {
+  width: 700px;
+}
+
+.header-image {
+  background-image: url("/assets/images/avatar-user.png");
+  background-size: cover;
+}
+
+.body{
+  height: 100%;
+  width: 100%;
+}
+
+.center{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+.full-width{
+  width: 100%;
+}

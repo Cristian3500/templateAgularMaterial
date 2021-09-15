@@ -2,18 +2,16 @@
   Template
 </mat-toolbar>
     <mat-selection-list  [multiple]="false" class="mat-list-item-content">
-    <mat-list-option><mat-icon matListIcon>dashboard</mat-icon>Dashboard</mat-list-option>
-    <mat-list-option><mat-icon matListIcon>settings</mat-icon>Configuración</mat-list-option>
-    <mat-list-option><mat-icon matListIcon>work</mat-icon>Operaciones</mat-list-option>
-    <mat-list-option><mat-icon matListIcon>supervisor_account</mat-icon>Roles</mat-list-option>
+    <mat-list-option [routerLink]="['/dashboard/']"><mat-icon matListIcon>dashboard</mat-icon>Dashboard</mat-list-option>
+    <mat-list-option [routerLink]="['/dashboard/users']"><mat-icon matListIcon>people</mat-icon>Usuarios</mat-list-option>
     </mat-selection-list>
 
     <mat-list>
       <mat-divider></mat-divider>
-      <h3 matSubheader>Notes</h3>
+      <h3 matSubheader>Note</h3>
       <mat-list-item >
          <mat-icon matListIcon>note</mat-icon>
-         <h4 matLine>notas</h4>
-         <p matLine class="demo-2">Otras Notas</p>
+         <h4 matLine>Note</h4>
+         <p matLine class="demo-2">Other Note</p>
       </mat-list-item>
     </mat-list>

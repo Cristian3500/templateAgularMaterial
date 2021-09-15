@@ -1,0 +1,61 @@
+<div class="body">
+  <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+  <div class="center">
+
+    <form [formGroup]="formRegister" (ngSubmit)="saveUser()" >
+    <mat-card class="card">
+      <mat-card-header>
+
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>Registrar Usuario</mat-card-title>
+        <mat-card-subtitle>Usuario</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+
+<div>
+        <p>
+          <mat-form-field class="full-width" appearance="legacy">
+            <mat-label>Nombre Completo</mat-label>
+            <input matInput placeholder="Nombre Completo" formControlName="nombrecompleto" autocomplete="off">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Requerido</mat-hint>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Nombre de Usuario</mat-label>
+            <input matInput placeholder="Nombre de Usuario" formControlName="usuario" autocomplete="off">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Requerido</mat-hint>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field class="full-width" appearance="standard">
+            <mat-label>Dirección</mat-label>
+            <input matInput placeholder="Dirección" formControlName="direccion">
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="password">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            <mat-hint>Requerido</mat-hint>
+          </mat-form-field>
+        </p>
+</div>
+      </mat-card-content>
+      <mat-card-actions >
+        <button mat-raised-button color="primary">Crear</button>
+        <button mat-raised-button [routerLink]="['/dashboard/users']">Cancelar</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+  </div>
+</div>

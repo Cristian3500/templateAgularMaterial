@@ -2,3 +2,20 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container{
+margin-left: 70px;
+margin-right: 70px;
+margin-top: 20px;
+margin-bottom: 70px;
+}
+
+.blue-snackbar{
+  background: #2196F3;
+  color:cornsilk;
+  height: 50px;
+}
+
+.right-spacer{
+  flex: 1 1 auto;
+}

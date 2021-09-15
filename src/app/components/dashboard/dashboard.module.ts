@@ -8,7 +8,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
-
+import { UsersComponent } from './users/users.component';
+import { RegisterUserComponent } from './users/register-user/register-user.component';
+import { CambiarPasswordComponent } from './users/cambiar-password/cambiar-password.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,10 @@ import { MenuBarComponent } from './menu-bar/menu-bar.component';
     InicioComponent,
     NavbarComponent,
     FooterComponent,
-    MenuBarComponent
+    MenuBarComponent,
+    RegisterUserComponent,
+    UsersComponent,
+    CambiarPasswordComponent,
   ],
   imports: [
     CommonModule,
